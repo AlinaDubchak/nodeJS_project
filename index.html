@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" type="text/css" media="all" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <title>Node JS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="App">
+      <div id="container">
+        <div id="content">
+          <header>
+            <img src="./icons/logo.svg" className="" alt="" />
+          </header>
+          <div class="row">
+            <div class="col">
+              <div id="left-panel">
+                <img src="./icons/top.svg" alt="" />
+                <img id="down_1" src="./icons/down.svg" alt="" />
+                <img id="down_2" src="./icons/circle.svg" alt="" />
+              </div>
+            </div>
+            <div class="col"></div>
+            <div class="col">
+              <div id="right-panel">
+                <h1 id="text">Welcome Back!</h1>
+                <form id="loginForm">
+                  <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">
+                      <img src="./icons/account.svg" alt="" />
+                    </span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Login"
+                      aria-label="Login"
+                      id="usernameInput"
+                    />
+                  </div>
+                  <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">
+                      <img src="./icons/lock_svgrepo.com.svg" alt="" />
+                    </span>
+                    <input
+                      type="password"
+                      id="passwordInput"
+                      class="form-control"
+                      placeholder="Password"
+                      aria-label="Password"
+                      aria-describedby="addon-wrapping"
+                    />
+                    <span class="input-group-text" id="basic-addon2">
+                      <img
+                        id="eye-icon"
+                        src="./icons/eye_2.svg"
+                        alt=""
+                        onclick="toggleInputType()"
+                        style="cursor: pointer"
+                      />
+                    </span>
+                  </div>
+                  <div id="SignUpFieldsContainer"></div>
+                  <p id="test_reset">
+                    Forgot your password?
+                    <a
+                      href="https://www.google.com/url?sa=i&url=https%3A%2F%2Ftheoryandpractice.ru%2Fposts%2F17973-interesnye-fakty-o-kotikakh&psig=AOvVaw2IggdeyI-WdaN9u4TbeT-a&ust=1699916446013000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNiF6fG6v4IDFQAAAAAdAAAAABAE"
+                    >
+                      Reset
+                    </a>
+                  </p>
+                  <button
+                    id="btn"
+                    class="sign_in button-login"
+                    type="button"
+                    onclick="login()"
+                  >
+                    Sign In
+                  </button>
+                </form>
+                <p id="link_reg">
+                  Don’t have an account?
+                  <a href="#" id="link_sign_up" onclick="addSignUpField()">
+                    Sign Up
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+  ></script>
+  <script src="index.js"></script>
+</html>
