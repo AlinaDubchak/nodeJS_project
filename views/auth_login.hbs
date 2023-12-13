@@ -1,0 +1,66 @@
+<div class="App">
+    <div id="container">
+        <div id="content">
+            <header>
+                <img src="/icons/logo.svg" className="" alt="" />
+            </header>
+            <div class="row">
+                <div class="col">
+                    <div id="left-panel">
+                        <img src="/icons/top.svg" alt="" />
+                        <img id="down_1" src="/icons/down.svg" alt="" />
+                        <img id="down_2" src="/icons/circle.svg" alt="" />
+                    </div>
+                </div>
+                <div class="col"></div>
+                <div class="col">
+                    <div id="right-panel">
+                        <h1 id="text">Welcome Back!</h1>
+                        {{#if userCreated}}
+                        <p class="alert">{{userCreated}}</p>
+                        {{/if}}
+                        {{#if loginErr}}
+                        <p class="alert">{{loginErr}}</p>
+                        {{/if}}
+                        <form id="loginForm" action="/auth/login" method="post">
+                            <div class="input-group flex-nowrap">
+                                <span class="input-group-text" id="addon-wrapping">
+                                    <img src="/icons/account.svg" alt="" />
+                                </span>
+                                <input id="usernameInput" name="username" type="text" class="form-control"
+                                    placeholder="Login" aria-label="Login" />
+                            </div>
+                            <div class="input-group flex-nowrap">
+                                <span class="input-group-text" id="addon-wrapping">
+                                    <img src="/icons/lock_svgrepo.com.svg" alt="" />
+                                </span>
+                                <input name="passwd" id="passwordInput" type="password" class="form-control"
+                                    placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping" />
+                                <span class="input-group-text" id="basic-addon2">
+                                    <img id="eye-icon" src="/icons/eye_2.svg" alt="" onclick="toggleInputType()"
+                                        style="cursor: pointer" />
+                                </span>
+                            </div>
+                            <p id="test_reset">
+                                Forgot your password?
+                                <a
+                                    href="https://www.google.com/url?sa=i&url=https%3A%2F%2Ftheoryandpractice.ru%2Fposts%2F17973-interesnye-fakty-o-kotikakh&psig=AOvVaw2IggdeyI-WdaN9u4TbeT-a&ust=1699916446013000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNiF6fG6v4IDFQAAAAAdAAAAABAE">
+                                    Reset
+                                </a>
+                            </p>
+                            <button type="submit" id="btn" class="sign_in button-login">
+                                Sign In
+                            </button>
+                        </form>
+                        <p id="link_reg">
+                            Don’t have an account?
+                            <a href="/auth/register" id="link_sign_up">
+                                Sign Up
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
