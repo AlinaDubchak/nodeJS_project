@@ -38,7 +38,6 @@ router.post('/register', async (req, res) => {
         req.flash('UserCreated', 'User successfully created!');
         res.redirect('/auth/login');
       } else {
-        console.log(1);
         req.flash(
           'registerErr',
           'User with this email or username already exist!'
@@ -49,5 +48,48 @@ router.post('/register', async (req, res) => {
   } catch (e) {
     console.log(e);
   }
-  console.log(req.body);
 });
+
+router.get('/login', (req, res) => {
+    res.render('auth_login', {
+        layout: 'auth',
+        title: 'Login page',
+        userCreated: req.flash('UserCreated'),
+        loginErr: req.flash('loginErr')
+    })
+})
+
+router.post('/login', async (req, res) => {
+    try {
+        const { username, passwd } = req.body
+        const candidate = await User.findOne({ username })
+        if (candidate) {
+            const passStatus = await bcrypt.compare(passwd, candidate.passwd)
+            if (passStatus) {
+                req.session.isAuth = true
+                req.session.user = candidate
+                req.session.save((err) => {
+                    if (err) throw err
+                    res.redirect('/')
+                })
+            } else {
+                req.flash('loginErr', 'Incorrect password!')
+                res.redirect('/auth/login')
+            }
+        } else {
+            req.flash('loginErr', 'User with this username doesn`t exist!')
+            res.redirect('/auth/login')
+        }
+    } catch (e) {
+        console.log(e)
+    }
+})
+
+router.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) throw err
+        res.redirect('/auth/login')
+    })
+})
+
+module.exports = router
