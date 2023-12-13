@@ -2,8 +2,9 @@ const { Router } = require('express');
 const router = Router();
 const User = require('../models/users');
 const bcrypt = require('bcryptjs');
+const auth = require('../middleware/auth')
 
-router.get('/register', (req, res) => {
+router.get('/register', auth, (req, res) => {
   res.render('auth_register', {
     layout: 'auth',
     title: 'Register page',
@@ -11,7 +12,7 @@ router.get('/register', (req, res) => {
   });
 });
 
-router.post('/register', async (req, res) => {
+router.post('/register', auth, async (req, res) => {
   try {
     const { username, passwd, mail } = req.body;
     if (!username) {
@@ -50,7 +51,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
+router.get('/login', auth, (req, res) => {
     res.render('auth_login', {
         layout: 'auth',
         title: 'Login page',
@@ -59,7 +60,7 @@ router.get('/login', (req, res) => {
     })
 })
 
-router.post('/login', async (req, res) => {
+router.post('/login', auth, async (req, res) => {
     try {
         const { username, passwd } = req.body
         const candidate = await User.findOne({ username })

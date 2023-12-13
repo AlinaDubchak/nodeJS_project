@@ -12,6 +12,8 @@ const {
 } = require('@handlebars/allow-prototype-access');
 const mongoUrl =
   'mongodb+srv://yarikkot04:tTRT5ZfVYfTh2Ugo@cluster0.8iwqsa4.mongodb.net/shop';
+const user_conf = require('./middleware/user_config')
+const varMiddleware = require('./middleware/varMiddleware')
 
 const app = express();
 
@@ -43,6 +45,8 @@ app.use(session({
   store: store,
 }))
 app.use(flash())
+app.use(user_conf)
+app.use(varMiddleware)
 
 app.use('/', mainRoute);
 app.use('/auth', authRoute)
