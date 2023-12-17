@@ -10,10 +10,10 @@ function toggleInputType() {
 
   if (passwordInput.attr('type') === 'password') {
     passwordInput.attr('type', 'text');
-    eyeIcon.attr('src', './icons/eye.svg');
+    eyeIcon.attr('src', '../icons/eye.svg');
   } else {
     passwordInput.attr('type', 'password');
-    eyeIcon.attr('src', './icons/eye_2.svg');
+    eyeIcon.attr('src', '../icons/eye_2.svg');
   }
 }
 

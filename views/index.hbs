@@ -1,5 +1,73 @@
-<h1>Main page</h1>
-{{#if @root.isAuth}}
-    <p>Username : {{username}}</p>
-    <a href="/auth/logout">Logout</a>
-{{/if}}
+<div id='container'>
+  <header>
+    <div id='logo'>
+      <button class='need_to_hover'>
+        <img src='/icons/logo.svg' alt='' />
+      </button>
+    </div>
+    <nav class='menu'>
+      <ul>
+        <li><a href='#'>Main</a></li>
+        <li><a href='#'>Catalog</a></li>
+        <li><a href='#' id='last_a'>Your Posts</a></li>
+      </ul>
+    </nav>
+    <div id='buttons_nav'>
+      <button id='last_btn' class='need_to_hover'>
+        <img src='/icons/buy.svg' alt='' />
+      </button>
+
+      <button class='need_to_hover'>
+        <a href='user_profile.hbs'><img src='/icons/account.svg' alt='' /></a>
+      </button>
+    </div>
+  </header>
+  <div id='content'>
+    <img id='circle_bg' src='/icons/circle_blur.svg' alt='' />
+    <h1>Find your perfect course to study!</h1>
+
+    <h3>More than 200+ course are waiting for you </h3>
+    <button
+      type='submit'
+      id='btn_catalog'
+      class='sign_in button-login'
+      type='button'
+      onclick=''
+    >
+      Go to catalog
+    </button>
+    <img id='ellipse_bg' src='/icons/Ellipse_blur.svg' alt='' />
+  </div>
+  <footer>
+    <div class='row'>
+      <div class='col'>
+        <div id='logo'>
+          <button class='gradient'>
+            <img src='/icons/logo.svg' alt='' />
+          </button>
+        </div>
+      </div>
+      <div class='col'>
+        <div id='list_footer'>
+          <ul>
+            <li><a href='#' id='first_li'>Main</a></li>
+            <li><a href='#'>Catalog</a></li>
+            <li><a href='#'>Your Posts</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id='media'>
+      <button class='gradient'>
+        <img src='/icons/Instagram.svg' alt='' />
+      </button>
+      <button class='gradient'>
+        <img src='/icons/twitter.svg' alt='' /></button>
+      <button class='gradient'>
+        <img src='/icons/linkedIn.svg' alt='' />
+      </button>
+    </div>
+
+    <p>2023 NodeJs</p>
+  </footer>
+</div>
