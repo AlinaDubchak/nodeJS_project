@@ -6,7 +6,9 @@ const editConfig = require('../middleware/edit')
 
 router.get('/', notAuth, async (req, res) => {
   try {
-    const courses = await Course.find({ userId: req.user._id }).populate('userId')
+    const courses = await Course.find({ userId: req.user._id }).populate(
+      'userId'
+    )
     res.render('post_page', {
       title: 'My posts',
       postCreated: req.flash('postCreated'),
@@ -62,3 +64,43 @@ router.get('/:id', notAuth, async (req, res) => {
     console.log(e)
   }
 })
+
+router.get('/:id/edit', [notAuth, editConfig], async (req, res) => {
+  try {
+    const courseId = req.params.id
+    const course = await Course.findById(courseId).populate('userId')
+    res.render('edit_post', {
+      title: course.title,
+      course,
+      id: courseId
+    })
+  } catch (e) {
+    console.log(e)
+  }
+})
+
+router.post('/edit', [notAuth, editConfig], async (req, res) => {
+  try {
+    const { courseId } = req.body
+    delete req.body.courseId
+    await Course.findByIdAndUpdate(courseId, req.body)
+    req.flash('postEdited', 'Course successfully edited!')
+    res.redirect('/myposts')
+  } catch (e) {
+    console.log(e)
+  }
+})
+
+router.post('/delete', [notAuth, editConfig], async (req, res) => {
+  try {
+    const { courseId } = req.body
+    delete req.body.courseId
+    await Course.findByIdAndDelete(courseId, req.body)
+    req.flash('postEdited', 'Course successfully deleted!')
+    res.redirect('/myposts')
+  } catch (e) {
+    console.log(e)
+  }
+})
+
+module.exports = router

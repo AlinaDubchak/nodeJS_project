@@ -1,0 +1,94 @@
+ <div id='container'>
+    <header>
+    <div id='logo'>
+      <button class='need_to_hover'>
+        <img src='/icons/logo.svg' alt='' />
+      </button>
+    </div>
+    <nav class='menu'>
+      <ul>
+        <li><a href='#'>Main</a></li>
+        <li><a href='/catalog'>Catalog</a></li>
+        <li><a href='/myposts' id='last_a'>Your Posts</a></li>
+      </ul>
+    </nav>
+    <div id='buttons_nav'>
+      <button id='last_btn' class='need_to_hover'>
+        <a href='/basket'><img src='/icons/buy.svg' alt='' /></a>
+      </button>
+
+      <button class='need_to_hover'>
+        <a href='/profile'><img src='/icons/account.svg' alt='' /></a>
+      </button>
+    </div>
+    </header>
+    <a href="/" id="back">Back /</a>
+    <div id='content' class="container">
+      <h1>Catalog</h1>
+      <img src="icons/catalog_ellipse_1.svg" alt="" id="img_1">
+      <input type="text" placeholder="Search ...">
+      {{#if courses.length}}
+     <div class="row" id="rows_col">
+      {{#each courses}}
+        <div class="col-md-4">
+           <a href="/myposts/{{id}}" target="_blank">
+             <div class="card">
+            <div class="card-image">
+              <img src="{{img}}" alt="{{title}}">
+            </div>
+            <div class="card-content">
+              <span class="card-title">{{title}}</span>
+                 <p class="author">Author: {{userId.username}}</p>
+              <p class="price">{{price}} $</p>
+            </div>
+            <div class="card-action actions">
+              {{#if @root.isAuth}}
+                <form action="/cart/add" method="POST">
+                  <input type="hidden" name="id" value="{{_id}}">
+                  <button type="submit" class="btn btn-primary" id="btn_shop">+</button> <span id="shop_link">Add to shop</span>
+                </form>
+              {{/if}}
+            </div>
+          </div></a>
+        </div>
+      {{/each}}
+       </div>
+      {{else}}
+      <p id="no_cource">No courses!</p>
+      {{/if}}
+             <img src="icons/catalog_ellipse_2.svg" alt="" id="img_2">
+     <br>
+      <br>
+</div>
+     <div id="FOOTER">
+          <div class='row'>
+      <div class='col'>
+        <div id='logo'>
+          <button class='gradient'>
+            <img src='/icons/logo.svg' alt='' />
+          </button>
+        </div>
+      </div>
+      <div class='col'>
+        <div id='list_footer'>
+          <ul>
+            <li><a href='#' id='first_li'>Main</a></li>
+            <li><a href='#'>Catalog</a></li>
+            <li><a href='#'>Your Posts</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id='media'>
+      <button class='gradient'>
+        <img src='/icons/Instagram.svg' alt='' />
+      </button>
+      <button class='gradient'>
+        <img src='/icons/twitter.svg' alt='' /></button>
+      <button class='gradient'>
+        <img src='/icons/linkedIn.svg' alt='' />
+      </button>
+    </div>
+
+    <p>2023 NodeJs</p>
+     </div>

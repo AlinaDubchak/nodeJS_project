@@ -1,5 +1,5 @@
-<div id='container'>
-  <header>
+  <div id='container'>
+<header>
     <div id='logo'>
       <button class='need_to_hover'>
         <img src='/icons/logo.svg' alt='' />
@@ -8,28 +8,30 @@
     <nav class='menu'>
       <ul>
         <li><a href='#'>Main</a></li>
-        <li><a href='#'>Catalog</a></li>
-        <li><a href='#' id='last_a'>Your Posts</a></li>
+        <li><a href='/catalog'>Catalog</a></li>
+        <li><a href='/myposts' id='last_a'>Your Posts</a></li>
       </ul>
     </nav>
     <div id='buttons_nav'>
       <button id='last_btn' class='need_to_hover'>
-        <img src='/icons/buy.svg' alt='' />
+        <a href='/basket'><img src='/icons/buy.svg' alt='' /></a>
       </button>
 
       <button class='need_to_hover'>
-        <a href='user_profile.hbs'><img src='/icons/account.svg' alt='' /></a>
+        <a href='/profile'><img src='/icons/account.svg' alt='' /></a>
       </button>
     </div>
-  </header>
-  <a href='/auth/logout' id="back">Logout /</a> 
-   <div id='content1'>
-    <img src="/icons/acc.svg" alt="" id="profile">
-    {{#if @root.isAuth}}
-      <p id="user">Username : {{username}}</p>
-    {{/if}}
-  </div>
-  <div id="FOOTER">
+    </header>
+     <div id='content' class="container">
+<p id="name_id"> Name of cource: {{course.title}}</p>
+
+    <img src="{{course.img}}" alt="{{course.title}}">
+
+<p class="price big"> Price for this cource: {{course.price}} $</p>
+     </div>
+    
+</div>
+ <div id="FOOTER">
           <div class='row'>
       <div class='col'>
         <div id='logo'>
@@ -59,6 +61,5 @@
       </button>
     </div>
 
-    <p>2023 NodeJs</p>
-     </div>
-</div>
+    <p class="foot">2023 NodeJs</p>
+     </div>  

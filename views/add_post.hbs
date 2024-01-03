@@ -1,0 +1,30 @@
+<h1>Add new course</h1>
+
+{{#if postError}}
+<p class='alert'>{{postError}}</p>
+{{/if}}
+
+<form action="/myposts/add" method="POST">
+  <div class="input-field">
+    <input id="title" name="title" type="text" class="validate" required>
+    <label for="title">Course name</label>
+    <span class="helper-text" data-error="Enter name"></span>
+  </div>
+
+  <div class="input-field">
+    <input id="price" name="price" type="number" class="validate" required min="1">
+    <label for="price">Course price</label>
+    <span class="helper-text" data-error="Enter price"></span>
+  </div>
+
+  <div class="input-field">
+    <input id="img" name="img" type="text" class="validate" required>
+    <label for="img">Course img URL</label>
+    <span class="helper-text" data-error="Enter url of img"></span>
+  </div>
+  <input name="userId" id="userId" type="hidden" value="{{userId}}">
+
+  <button class="btn btn-primary">Add course</button>
+</form>
+<br>
+<a href="/myposts">Back</a>

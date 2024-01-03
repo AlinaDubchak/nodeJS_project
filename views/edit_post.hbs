@@ -1,0 +1,93 @@
+  <div id='container'>
+<header>
+    <div id='logo'>
+      <button class='need_to_hover'>
+        <img src='/icons/logo.svg' alt='' />
+      </button>
+    </div>
+    <nav class='menu'>
+      <ul>
+        <li><a href='#'>Main</a></li>
+        <li><a href='/catalog'>Catalog</a></li>
+        <li><a href='/myposts' id='last_a'>Your Posts</a></li>
+      </ul>
+    </nav>
+    <div id='buttons_nav'>
+      <button id='last_btn' class='need_to_hover'>
+        <a href='/basket'><img src='/icons/buy.svg' alt='' /></a>
+      </button>
+
+      <button class='need_to_hover'>
+        <a href='/profile'><img src='/icons/account.svg' alt='' /></a>
+      </button>
+    </div>
+    </header>
+<a href="/myposts" id="back">Back /</a>
+ <div id='content' class="container">
+<h1>Edit course</h1>
+
+<form action="/myposts/edit" method="POST">
+  <div class="form-group">
+    <label for="title">Course name</label>
+    <input id="title" name="title" type="text" class="form-control" required value="{{course.title}}">
+    <span class="helper-text" data-error="Enter name"></span>
+  </div>
+
+  <div class="form-group">
+    <label for="price">Course price</label>
+    <input id="price" name="price" type="number" class="form-control" required min="1" value="{{course.price}}">
+    <span class="helper-text" data-error="Enter price"></span>
+  </div>
+
+  <div class="form-group">
+    <label for="img">Course img URL</label>
+    <input id="img" name="img" type="text" class="form-control" required value="{{course.img}}">
+    <span class="helper-text" data-error="Enter url of img"></span>
+  </div>
+
+  <input name="userId" id="userId" type="hidden" value="{{course.userId._id}}">
+  <input name="courseId" id="courseId" type="hidden" value="{{id}}">
+
+  <button class="btn btn-primary" id="edit_post">Edit course</button>
+</form>
+
+
+<form action="/myposts/delete" method="POST">
+  <input name="courseId" id="courseId" type="hidden" value="{{id}}">
+  <button class="btn btn-primary" id="edit_post" id="btn_post">Delete course</button>
+</form>
+ </div>
+
+  </div>
+     <div id="FOOTER">
+          <div class='row'>
+      <div class='col'>
+        <div id='logo'>
+          <button class='gradient'>
+            <img src='/icons/logo.svg' alt='' />
+          </button>
+        </div>
+      </div>
+      <div class='col'>
+        <div id='list_footer'>
+          <ul>
+            <li><a href='#' id='first_li'>Main</a></li>
+            <li><a href='#'>Catalog</a></li>
+            <li><a href='#'>Your Posts</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id='media'>
+      <button class='gradient'>
+        <img src='/icons/Instagram.svg' alt='' />
+      </button>
+      <button class='gradient'>
+        <img src='/icons/twitter.svg' alt='' /></button>
+      <button class='gradient'>
+        <img src='/icons/linkedIn.svg' alt='' />
+      </button>
+    </div>
+
+    <p class="foot">2023 NodeJs</p>
+     </div>  

@@ -22,23 +22,51 @@
       </button>
     </div>
   </header>
-  <div id='content'>
-    <img id='circle_bg' src='/icons/circle_blur.svg' alt='' />
-    <h1>Find your perfect course to study!</h1>
+  <a href="/" id="back">Back /</a>
+  <div id='content' class="container">
+    <h1>My posts</h1>
+    {{#if postCreated}}
+    <p class='alert'>{{postCreated}}</p>
+    {{/if}}
 
-    <h3>More than 200+ course are waiting for you </h3>
-    <button
-      type='submit'
-      id='btn_catalog'
-      class='sign_in button-login'
-      type='button'
-      onclick=''
-    >
-      Go to catalog
-    </button>
-    <img id='ellipse_bg' src='/icons/Ellipse_blur.svg' alt='' />
+    {{#if postEdited}}
+    <p class='alert'>{{postEdited}}</p>
+    {{/if}}
+
+    {{#if postError}}
+    <p class='alert'>{{postError}}</p>
+    {{/if}}
+    {{#if courses.length}}
+    {{#each courses}}
+    <div class="row">
+      <div class="col-md-4">
+        <a href="/myposts/{{id}}" target="_blank" id="non_light">
+          <div class="card">
+            <div class="card-image">
+              <img src="{{img}}" alt="{{title}}">
+            </div>
+            <div class="card-content">
+              <span class="card-title">{{title}}</span>
+              <p class="author">Author: {{userId.username}}</p>
+              <p class="price">{{price}} $</p>
+            </div>
+            <div class="card-action actions">
+              {{#if @root.isAuth}}
+              <button type="submit" class="btn btn-primary" id="btn_edit"><a
+                  href="/myposts/{{id}}/edit">Edit</a></button>
+              {{/if}}
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    {{/each}}
+    {{else}}
+    <p id="no_cource">No courses!</p>
+    {{/if}}
+    <button id='btn_catalog'><a href="/myposts/add" id="add_post">Add post</a></button>
   </div>
-  <footer>
+  <div id="FOOTER">
     <div class='row'>
       <div class='col'>
         <div id='logo'>
@@ -68,6 +96,5 @@
       </button>
     </div>
 
-    <p>2023 NodeJs</p>
-  </footer>
-</div>
+    <p class="foot">2023 NodeJs</p>
+  </div>
