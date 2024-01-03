@@ -33,7 +33,11 @@ header {
   margin-left: 80px;
   margin-right: 80px;
 }
+#content1 {
+  margin-left: 80px;
+  margin-right: 80px;
 
+}
 .menu {
   display: flex;
   justify-content: space-between;
@@ -150,6 +154,7 @@ button#last_btn {
   background: #790252;
   color: #ffffff;
 }
+
 footer {
   position: absolute;
   background-color: #151515;
@@ -207,4 +212,192 @@ footer p {
     rgba(46, 46, 46, 1) 0%,
     rgba(0, 0, 0, 1) 100%
   );
+}
+div#content input {
+  width: 383px;
+  height: 73px;
+  border-radius: 30px;
+  border: none;
+  padding: 20px;
+  margin-top: 60px;
+  margin-bottom: 80px;
+   background: linear-gradient(
+    180deg,
+    rgba(60, 60, 60, 1) 0%,
+    rgba(37, 37, 37, 1) 70%
+  );
+  color: #ffffff;
+  outline: none;
+ }
+ div.card{
+  height: 420px;
+  width: 350px;
+  padding-top: 35px;
+  padding-right: 45px;
+  padding-left: 45px;
+  border-radius: 15px;
+  margin-bottom: 50px;
+
+  background-color: #29282A;
+  color: #ffffff;
+  font-size: 24px;
+ }
+ .card-image {
+  width: 255px;
+  height: 139px;
+  margin-bottom: 35px;
+ }
+ .card-image img {
+  max-width: 255px;
+  max-height: 139px;
+ }
+#rows_col{
+display: flex;
+justify-content: center;
+}
+div#rows_col .col-md-4:nth-child(3n+1) {
+  padding-left: 0; 
+}
+
+div#rows_col .col-md-4:nth-child(3n) {
+  padding-right: 0; 
+}
+div#rows_col .col-md-4 a {
+  text-decoration: none;
+}
+div#rows_col .col-md-4:nth-child(2n) {
+  padding-left: 25px; 
+  padding-right: 25px; 
+}
+p.price{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #A91079;
+}
+.author{
+  font-size: 16px;
+  margin-top: 10px;
+}
+#shop_link{
+  font-size:16px;
+  margin-left: 10px;
+}
+#btn_shop{
+  width: 40px;
+  height: 40px;
+  border-radius: 80px;
+  color: #A91079;
+  border: 2px solid #A91079;
+  background-color: transparent;
+  font-weight: 500;
+}
+#no_cource{
+  color: #ffffff;
+  font-size: 24px;
+  text-align: center;
+}
+#back{
+  color: #ffffff;
+  font-size: 16px;
+  margin-left: 80px;
+  text-decoration: none;
+}
+#back:hover{
+  color: #A91079;
+  text-decoration: underline;
+}
+#FOOTER{
+  background-color: #151515;
+  height: 511px;
+  width: 100%;
+  margin-top: 280px;
+  padding: 55px 80px 0 80px;
+}
+#img_1{
+  position: absolute;
+  right: 0;
+  width: 30%;
+}
+#img_2{
+  position: absolute;
+  top: 1200px;
+  left: 0;
+  width: 30%;
+}
+#profile {
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+#user{
+  font-size: 36px;
+  color: #ffffff;
+}
+#non_light{
+  color: #ffffff;
+  text-decoration: none;
+}
+#btn_edit{
+  border: 2px solid #790252;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 16px;
+
+  height: 45px;
+  transition: all 0.3s ease-out;
+}
+#btn_edit a{
+  color: #ffffff;
+  text-decoration: none;
+}
+#btn_edit:hover{
+border: none;
+}
+#add_post{
+  color: #ffffff;
+  text-decoration: none;
+}
+.foot {
+  color: #ffffff;
+  text-align: center;
+}
+.form-group label{
+  color: #3D3D3D;
+  font-size: 16px;
+
+}
+input#title.form-control{
+  margin-top: 10px;
+}
+input#img.form-control{
+  margin-top: 10px;
+}
+input#price.form-control{
+  margin-top: 10px;
+}
+#edit_post{
+  width: 278px;
+  height: 67px;
+  border: 5px solid #790252;
+  border-radius: 40px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 24px;
+  display: block;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  margin-bottom: 20px;
+}
+#edit_post:hover {
+  background: #790252;
+  color: #ffffff;
+}
+#flex_btn{
+  width: 750px;
+  display: flex;
+  justify-content: space-between;
+}
+#name_id{
+  color: #ffffff;
+  font-size: 24px;
+  margin-top: 20px;
 }

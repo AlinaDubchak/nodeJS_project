@@ -20,6 +20,8 @@ const app = express()
 const mainRoute = require('./routes/main')
 const authRoute = require('./routes/auth')
 const profileRoute = require('./routes/profile')
+const postRoute = require('./routes/post')
+const catalogRoute = require('./routes/catalog')
 const shopRoute = require('./routes/basket')
 
 const hbs = expHbs.create({
@@ -55,6 +57,8 @@ app.use(varMiddleware)
 app.use('/', mainRoute)
 app.use('/auth', authRoute)
 app.use('/profile', profileRoute)
+app.use('/myposts', postRoute)
+app.use('/catalog', catalogRoute)
 app.use('/basket', shopRoute)
 async function main() {
   const PORT = process.env.PORT || 3000
